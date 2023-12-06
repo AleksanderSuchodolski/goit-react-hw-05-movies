@@ -32,18 +32,7 @@ const Movies = () => {
       .finally(() => setLoading(false));
   }, [films, searchQuery]);
 
-  const onSubmitSearchBar = evt => {
-    evt.preventDefault();
-    const form = evt.currentTarget;
-    const searchValue = form.search.value.trim().toLowerCase();
-
-    if (searchValue === '') {
-      Notify.info('Enter your request, please!', styleNotify);
-      setSearchParams({});
-      setFilms([]);
-      return;
-    }
-
+  const onSubmitSearchBar = searchValue => {
     if (searchValue === searchQuery) {
       Notify.info('Enter new request, please!', styleNotify);
       return;

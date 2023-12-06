@@ -30,7 +30,7 @@ export async function fetchMovieDetails(endPoint, movieId) {
 }
 
 export async function fetchMovieCast(endPoint, movieId) {
-  const url = `${URL}${endPoint}/${movieId}/credits?api_key=${KEY}}`;
+  const url = `${URL}${endPoint}/${movieId}/credits?api_key=${KEY}`;
   const response = await axios.get(url);
   return response.data;
 }
